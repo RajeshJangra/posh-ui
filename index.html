@@ -1,25 +1,38 @@
-<!DOCTYPE html>
-<html ng-app="Induction">
+﻿<!DOCTYPE html>
+<html ng-app="app">
 <head>
-	<title>Xebia Induction Program</title>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css">
-	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css"  href="css/style.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
-	<script type="text/javascript" src="config/app.js"></script>
+    <title>Xebia Induction Program</title>
+
+    <!-- bootstrap css -->
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- application css -->
+    <link href="app-content/app.css" rel="stylesheet" />
 </head>
 <body>
-	<header ng-include="'templates/header.html'"> </header>
-	<div class="jumbotron">
-		<div class="container">
-			<div class="col-xs-offset-2 col-xs-8">
-				<div ng-view></div>
-			</div>
-		</div>
-	</div>
-	<footer ng-include="'templates/footer.html'"> </footer>
+    <!-- main app container -->
+    <div class="jumbotron">
+        <div class="container">
+            <div class="col-sm-8 col-sm-offset-2">
+                <ui-view></ui-view>
+            </div>
+        </div>
+    </div>
+
+    <!-- angular scripts -->
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-messages.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.18/angular-ui-router.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/ngStorage/0.3.6/ngStorage.min.js"></script>
+
+    <!-- application scripts -->
+    <script src="app.js"></script>
+    <script src="app-services/authentication.service.js"></script>
+    <script src="home/index.controller.js"></script>
+    <script src="login/index.controller.js"></script>
+
+    <!-- scripts for fake backend -->
+    <!-- <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-mocks.js"></script>
+    <script src="app-helpers/fake-backend.js"></script> -->
 </body>
 </html>
