@@ -2,19 +2,19 @@ app = angular.module('Induction',["ngRoute"])
 .config(function($routeProvider) {
     $routeProvider
     .when("/", {
-        templateUrl : "partials/login.html",
+        templateUrl : "templates/login.html",
         controller:"LoginController"
     })
     .when("/listing", {
-        templateUrl : "partials/listing.html",
+        templateUrl : "templates/listing.html",
         controller : "ListController"
     })
     .when("/questions", {
-        templateUrl : "partials/question.html",
+        templateUrl : "templates/question.html",
         controller:"QuestionController"
     })
     .otherwise("/", {
-		templateUrl : "partials/login.html",
+		templateUrl : "templates/login.html",
 		controller : "LoginController"
     });
 });
