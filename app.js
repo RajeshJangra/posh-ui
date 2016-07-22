@@ -12,10 +12,10 @@
 
         // app routes
         $stateProvider
-            .state('home', {
+            .state('course', {
                 url: '/',
-                templateUrl: 'home/index.view.html',
-                controller: 'Home.IndexController',
+                templateUrl: 'course/index.view.html',
+                controller: 'Course.IndexController',
                 controllerAs: 'vm'
             })
             .state('login', {
