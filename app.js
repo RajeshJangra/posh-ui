@@ -7,8 +7,7 @@
         .run(run);
 
     function config($stateProvider, $urlRouterProvider) {
-        // default route
-        $urlRouterProvider.otherwise("/");
+        
 
         // app routes
         $stateProvider
@@ -16,7 +15,13 @@
                 url: '/',
                 templateUrl: 'course/index.view.html',
                 controller: 'Course.IndexController',
-                controllerAs: 'vm'
+                controllerAs: 'cm'
+            })
+			.state('questions', {
+                url: '/questions',
+                templateUrl: 'course/question.view.html',
+                controller: 'Questions.IndexController',
+                controllerAs: 'qm'
             })
             .state('login', {
                 url: '/login',
@@ -24,6 +29,8 @@
                 controller: 'Login.IndexController',
                 controllerAs: 'vm'
             });
+			// default route
+        $urlRouterProvider.otherwise("/");
     }
 
     function run($rootScope, $http, $location, $localStorage) {

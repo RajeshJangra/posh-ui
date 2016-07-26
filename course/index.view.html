@@ -1,5 +1,25 @@
-<div class="col-md-6 col-md-offset-3">
-    <h1>Course</h1>
-    <p>You're logged in with JWT!!</p>
-    <p><a href="#/login">Logout</a></p>
+<div class="col-lg-12">
+ <a style="float:right;" href="#/login">Logout</a>
+    <h3>Available Courses</h3>
+	<br/>
+
+  <table>
+  <thead>
+  <tr>
+  <th style="width:250px">Name</th>
+  <th style="width:200px;text-align:center;">Status</th>
+  <th style="width:100px;text-align:center;">Total Attempts</th>
+  <th style="width:100px;text-align:center;">Score</th>
+  <th style="width:100px;text-align:center;">Link</th>
+  </tr>
+  </thead>
+  <tr ng-repeat="course in courses">
+  <td>{{course.name}}</td>
+  <td style="text-align:center;">{{course.result}}</td>
+  <td style="text-align:center;">{{course.attemptCount}}</td>
+  <td style="text-align:center;">{{course.score}}</td>
+  <td style="text-align:center;"><a ng-if="course.result == 'NOT STARTED' || course.result == 'FAILED'" href="#" ng-click="questions(course.id,username)">Start</a></td>
+  
+  </tr>
+  </table>
 </div>

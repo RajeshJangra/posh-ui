@@ -11,7 +11,7 @@
 </head>
 <body>
     <!-- main app container -->
-    <div class="jumbotron">
+    <div class="content">
         <div class="container">
             <div class="col-sm-8 col-sm-offset-2">
                 <ui-view></ui-view>
@@ -24,12 +24,15 @@
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-messages.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.18/angular-ui-router.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/ngStorage/0.3.6/ngStorage.min.js"></script>
-
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- application scripts -->
     <script src="app.js"></script>
     <script src="app-services/authentication.service.js"></script>
+	<script src="app-services/cources.service.js"></script>
+	<script src="app-services/question.service.js"></script>
     <script src="course/index.controller.js"></script>
     <script src="login/index.controller.js"></script>
+	<script src="course/question.controller.js"></script>
 
     <!-- scripts for fake backend -->
     <!-- <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-mocks.js"></script>

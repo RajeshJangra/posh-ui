@@ -1,3 +1,80 @@
-﻿.help-block {
+.help-block {
     font-size: 12px;
+}
+
+body{
+	background-image:url('images/bkgrnd.jpg');
+}
+
+ 
+
+.content {
+    color: inherit;
+    margin-bottom: 30px;
+	padding-bottom: 48px;
+    padding-top: 48px;
+	background-color:none;
+}
+
+.quizArea{
+	min-height:150px;
+	max-width:650px;
+	background-color:white;
+	padding:50px;
+	border-radius:10px;
+	
+}
+
+.btn{
+	-moz-user-select: none;
+    background-color: #2980b9;
+    border-radius: 0;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.42857;
+    margin-bottom: 0;
+    padding: 6px 12px;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+	color:white;
+}
+
+.btn:hover{
+	-moz-user-select: none;
+    background-color: #2980b9;
+    border-radius: 0;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.42857;
+    margin-bottom: 0;
+    padding: 6px 12px;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+	color:white;
+}
+
+.correct{
+	color:green;
+}
+
+.incorrect{
+	color:red;
+}
+
+.question{
+	color: #2980b9;
+}
+
+.score{
+	background-color:#94d9ff;
+	color:black;
+	padding:15px;
+	border-radius:10px;
+	margin-bottom:20px
 }
