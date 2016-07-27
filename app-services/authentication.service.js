@@ -16,6 +16,7 @@
         function Login(username, password, callback) {
             $http.post('http://localhost:8080/api/auth', { username: username, password: password })
                 .success(function (response) {
+					service.Logout;
                     // login successful if there's a token in the response
                     if (response.token) {
                         // store username and token in local storage to keep user logged in between page refreshes
@@ -40,7 +41,7 @@
         function Logout() {
             // remove user from local storage and clear http auth header
             delete $localStorage.currentUser;
-            $http.defaults.headers.common['X-Auth-Token'] = '';
+            delete $http.defaults.headers.common['X-Auth-Token'];
         }
     }
 })();
