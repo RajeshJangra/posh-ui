@@ -21,8 +21,8 @@
             });
         }
 		
-		$scope.questions = function questions(courseId,courseName,empId) {
-			var data = {"courseId":courseId,"courseName":courseName,"empId":empId};
+		$scope.questions = function questions(course,empId) {
+			var data = {"course":course,"empId":empId};
 			$localStorage.selectedCource = data;
            $location.path('questions'); 
         };

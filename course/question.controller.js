@@ -11,9 +11,9 @@
 
         function initController() {
 			var data = $localStorage.selectedCource;
-			$scope.courseName = data.courseName;
-			$scope.videoLink = "./static/videos/"+data.courseName+".mp4";
-			$scope.pdfLink = "./static/pdf/"+data.courseName+".pdf";
+			$scope.course = data.course;
+			$scope.videoLink = "./static/videos/"+data.course.name+".mp4";
+			$scope.pdfLink = "./static/pdf/"+data.course.name+".pdf";
 			QuestionsService.getQuestions(data, function (result) {
             $scope.allQuestions = result.questions;       
             });
