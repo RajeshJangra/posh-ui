@@ -36,7 +36,15 @@
 </div>
 
 <div class="intro" ng-show="!inProgress">
-	<p>Welcome to the Xebia Quiz</p>
+	
+	 <h3>{{courseName}}</h3>
+	
+
+<video width="600" controls>
+  <source ng-src="{{videoLink}}" type="video/mp4">
+  Your browser does not support HTML5 video.
+</video>
+<br/><br/>
 	<button id="startQuiz" ng-click="start()" class="btn">Start the Quiz</button>
 </div>
 </div>

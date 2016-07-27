@@ -11,10 +11,12 @@
 
         function initController() {
 			var data = $localStorage.selectedCource;
+			$scope.courseName = data.courseName;
+			$scope.videoLink = "./static/videos/"+data.courseName+".mp4";
 			QuestionsService.getQuestions(data, function (result) {
             $scope.allQuestions = result.questions;       
             });
-			$location.path('questions');
+			$location.path('/questions');
         }
 		
 		
@@ -71,6 +73,10 @@
 			//	$scope.reset();
 				$scope.showScore = true;
 				$scope.quizOver = false;
+			}
+			
+			$scope.showHome = function() {
+				$location.path('/');
 			}
 		 
     }
