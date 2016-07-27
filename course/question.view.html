@@ -1,4 +1,4 @@
-<div class="quizArea">
+<div class="mainArea">
 <div class="quiz-area" ng-show="inProgress">
 	<div ng-show="quizstarted">
 		<h2 id="question" class="question">{{id+1}}. {{question.desc}}</h2>
@@ -29,14 +29,14 @@
 		Your total score is 23%.<br/>
 		Result : PASS
 		</div>
-		<button ng-click="reset()" class="btn">Home</button>
+		<button ng-click="showHome()" class="btn">Home</button>
 		</div>
 		
 	
 </div>
 
 <div class="intro" ng-show="!inProgress">
-	<p>Welcome to the QuizApp</p>
+	<p>Welcome to the Xebia Quiz</p>
 	<button id="startQuiz" ng-click="start()" class="btn">Start the Quiz</button>
 </div>
 </div>

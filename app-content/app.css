@@ -16,9 +16,9 @@ body{
 	background-color:none;
 }
 
-.quizArea{
+.mainArea{
 	min-height:150px;
-	max-width:650px;
+	max-width:750px;
 	background-color:white;
 	padding:50px;
 	border-radius:10px;
@@ -77,4 +77,12 @@ body{
 	padding:15px;
 	border-radius:10px;
 	margin-bottom:20px
+}
+
+.coursesTbl tr td{
+	padding:10px;
+}
+
+.coursesTbl thead  tr th{
+	padding:10px;
 }
