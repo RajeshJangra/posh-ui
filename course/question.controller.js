@@ -13,6 +13,7 @@
 			var data = $localStorage.selectedCource;
 			$scope.courseName = data.courseName;
 			$scope.videoLink = "./static/videos/"+data.courseName+".mp4";
+			$scope.pdfLink = "./static/pdf/"+data.courseName+".pdf";
 			QuestionsService.getQuestions(data, function (result) {
             $scope.allQuestions = result.questions;       
             });
