@@ -1,4 +1,4 @@
-﻿(function () {
+﻿﻿(function () {
     'use strict';
 
     angular
@@ -23,7 +23,10 @@
                 if (result === true) {
                     $location.path('/');
                 } else {
-                    vm.error = 'Username or password is incorrect';
+                	vm.error = 'Username or password is incorrect';
+                	if(result === null || result === 'null' || result === undefined){
+                		vm.error = 'Looks like server is down or not reachable.';
+                	}
                     vm.loading = false;
                 }
             });

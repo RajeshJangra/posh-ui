@@ -1,4 +1,4 @@
-﻿(function () {
+﻿﻿(function () {
     'use strict';
 
     angular
@@ -30,11 +30,11 @@
                         callback(true);
                     } else {
                         // execute callback with false to indicate failed login
-                        callback(false);
+                        callback(response);
                     }
                 })
 				.error(function(response){
-					callback(false);
+					callback(response);
 				});
         }
 
