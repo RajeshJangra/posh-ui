@@ -18,7 +18,7 @@
   <td style="text-align:center;">{{course.result}}</td>
   <td style="text-align:center;">{{course.attemptCount}}</td>
   <td style="text-align:center;">{{course.score}}</td>
-  <td style="text-align:center;"><a ng-if="course.result == 'NOT STARTED' || course.result == 'FAILED'" href="#" ng-click="questions(course.id,username)">Start</a></td>
+  <td style="text-align:center;"><a ng-if="course.result == 'NOT STARTED' || course.result == 'FAILED'" href="#" ng-click="questions(course.id,course.name,username)">Start</a></td>
   
   </tr>
   </table>
