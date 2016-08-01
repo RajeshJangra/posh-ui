@@ -13,7 +13,7 @@
         return service;
 
         function getQuestions(data, callback) {
-            $http.get('http://localhost:8080/api/course/'+data.courseId+'/start/'+data.empId)
+            $http.get('http://localhost:8080/api/course/'+data.course.id+'/start/'+data.empId)
                   .success(function (response) {
                         callback(response);
                 });
