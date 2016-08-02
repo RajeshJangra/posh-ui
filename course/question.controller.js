@@ -15,7 +15,8 @@
 			$scope.videoLink = "./static/videos/"+data.course.name+".mp4";
 			$scope.pdfLink = "./static/pdf/"+data.course.name+".pdf";
 			QuestionsService.getQuestions(data, function (result) {
-            $scope.allQuestions = result.questions;       
+            $scope.allQuestions = result.questions; 
+			$scope.attemptId = result.attemptId;			
             });
 			$location.path('/questions');
         }
@@ -70,15 +71,21 @@
 			}
 
 			
-			$scope.finalSubmit = function() {
-			//	$scope.reset();
-				$scope.showScore = true;
-				$scope.quizOver = false;
-			}
 			
 			$scope.showHome = function() {
 				$location.path('/');
 			}
+			
+			$scope.finalSubmit = function() {
+				
+				QuestionsService.submitQuiz($scope.attemptId, $scope.selectedQuestions, function (response) {	
+					$scope.score = response.score;
+					$scope.result = response.result;
+				});
+				$scope.showScore = true;
+				$scope.quizOver = false;
+        }
+		
 		 
     }
 
