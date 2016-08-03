@@ -15,6 +15,10 @@
 				$scope.scorecardResult = response.data;
 			});
         }
+        
+        $scope.showHome = function() {
+			$location.path('/');
+		}
     }
 
 })();
