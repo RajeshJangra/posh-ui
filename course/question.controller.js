@@ -24,13 +24,20 @@
 		
 		
 		$scope.start = function() {
-				$scope.id = 0;
-				$scope.quizOver = false;
-				$scope.quizstarted = true;
-				$scope.showScore = false;
-				$scope.inProgress = true;
-				$scope.getQuestion();
-				$scope.selectedQuestions = [];
+			var data = $localStorage.selectedCource;
+			QuestionsService.getQuestions(data, function (result) {
+			$scope.allQuestions = result.questions; 
+			$scope.attemptId = result.attemptId;	
+
+			$scope.id = 0;
+			$scope.quizOver = false;
+			$scope.quizstarted = true;
+			$scope.showScore = false;
+			$scope.inProgress = true;
+			$scope.getQuestion();
+			$scope.selectedQuestions = [];
+			});
+			
 			};
 
 			$scope.reset = function() {
