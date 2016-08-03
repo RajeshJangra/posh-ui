@@ -9,20 +9,15 @@
 						{{option.desc}}
 				</label></li>
 			</ul>
-			<button ng-click="checkAnswer()" ng-show="answerMode" class="btn">Submit</button>
 
-			<div ng-show="!answerMode">
+			<div ng-show="!quizOver">
 				<button ng-click="nextQuestion()" class="btn">Next ></button>
-				<span ng-show="correctAns" class="correct">That is correct!</span> <span
-					ng-show="!correctAns" class="incorrect">Sorry, that is an
-					incorrect answer.</span>
+			</div>
+			<div ng-show="quizOver">
+				<button ng-click="finalSubmit()" class="btn">Submit</button>
 			</div>
 		</div>
 
-		<div ng-show="quizOver">
-			<h2>Quiz is over</h2>
-			<button ng-click="finalSubmit()" class="btn">Final Submit</button>
-		</div>
 	</div>
 
 	<div class="intro" ng-show="!inProgress">
@@ -31,9 +26,8 @@
 			<source ng-src="{{videoLink}}" type="video/mp4">
 			Your browser does not support HTML5 video.
 		</video>
-		<br />
-		<br /> <a class="btn" ng-href="{{pdfLink}}" target="_blank">PDF</a> <br />
-		<br />
+		<br /> <br /> <a class="btn" ng-href="{{pdfLink}}" target="_blank">PDF</a>
+		<br /> <br />
 		<button id="startQuiz" ng-click="start()" class="btn">Start
 			the Quiz</button>
 	</div>
