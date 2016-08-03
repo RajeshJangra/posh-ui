@@ -29,7 +29,9 @@
 				callback(response);
 			})
 			.error(function(response){
-				$location.path('/login');
+				if(response.status == 401){
+					$location.path('/login');
+				}
 			});
 		}
 
