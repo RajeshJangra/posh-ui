@@ -14,25 +14,33 @@
 		return service;
 
 		function getQuestions(data, callback) {
-			$http.get('http://localhost:8080/api/course/'+data.course.id+'/start/'+data.empId)
-			.success(function (response) {
+			$http({
+				method: 'GET',
+				url: 'http://localhost:8080/api/course/'+data.course.id+'/start/'+data.empId
+			}).then(function(response) {
 				callback(response);
-			})
-			.error(function(response){
-				$location.path('/login');
-			});
-		}
-
-		function submitQuiz(attemptId, questions, callback) {
-			$http.post('http://localhost:8080/api/course/submit/'+attemptId, questions)
-			.success(function (response) {
-				callback(response);
-			})
-			.error(function(response){
-				if(response.status == 401){
+		    }, function(response) {
+		    	if(response.status == 401){
 					$location.path('/login');
 				}
-			});
+				console.log(response);
+		    });
+		}
+
+		function submitQuiz(attemptId, questions) {
+			$http({
+				method: 'POST',
+				url: 'http://localhost:8080/api/course/submit/'+attemptId,
+				data: questions
+			}).then(function(response) {
+				$localStorage.attemptId = attemptId;
+				$location.path('/scorecard');
+		    }, function(response) {
+		    	if(response.status == 401){
+					$location.path('/login');
+				}
+		    	console.log(response);
+		    });
 		}
 
 	}

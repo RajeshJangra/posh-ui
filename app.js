@@ -17,6 +17,12 @@
                 controller: 'Course.IndexController',
                 controllerAs: 'cm'
             })
+            .state('scorecard', {
+                url: '/scorecard',
+                templateUrl: 'course/scorecard.view.html',
+                controller: 'Course.ScorecardController',
+                controllerAs: 'scorecardurl'
+            })
 			.state('questions', {
                 url: '/questions',
                 templateUrl: 'course/question.view.html',

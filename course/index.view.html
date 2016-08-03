@@ -1,27 +1,28 @@
 <div class="col-lg-12 mainArea">
-    <h3>Available Courses</h3>
-	<br/>
+	<h3>Available Courses</h3>
+	<br />
 
-  <table class="coursesTbl">
-  <thead>
-  <tr>
-  <th style="width:250px">Name</th>
-  <th style="width:200px;text-align:center;">Status</th>
-  <th style="width:100px;text-align:center;">Total Attempts</th>
-  <th style="width:100px;text-align:center;">Score</th>
-  <th style="width:100px;text-align:center;">Link</th>
-  </tr>
-  </thead>
-  <tr ng-repeat="course in courses">
-  <td>{{course.name}}</td>
-  <td style="text-align:center;">
-  <span ng-if="(course.result == 'IN PROGRESS')">ABORTED</span>
-  <span ng-if="(course.result != 'IN PROGRESS')">{{course.result}}</span>
-  </td>
-  <td style="text-align:center;">{{course.attemptCount}}</td>
-  <td style="text-align:center;">{{course.scoreInPercent}}</td>
-  <td style="text-align:center;"><a ng-if="(course.result == 'NOT STARTED' || course.result == 'FAILED' || course.result == 'IN PROGRESS') && (course.attemptCount <3)" href="" ng-click="questions(course,username)">Start</a></td>
-  
-  </tr>
-  </table>
+	<table class="coursesTbl">
+		<thead>
+			<tr>
+				<th style="width: 250px">Name</th>
+				<th style="width: 200px; text-align: center;">Status</th>
+				<th style="width: 100px; text-align: center;">Total Attempts</th>
+				<th style="width: 100px; text-align: center;">Score</th>
+				<th style="width: 100px; text-align: center;">Link</th>
+			</tr>
+		</thead>
+		<tr ng-repeat="course in courses">
+			<td>{{course.name}}</td>
+			<td style="text-align: center;"><span
+				ng-if="(course.result == 'IN PROGRESS')">ABORTED</span> <span
+				ng-if="(course.result != 'IN PROGRESS')">{{course.result}}</span></td>
+			<td style="text-align: center;">{{course.attemptCount}}</td>
+			<td style="text-align: center;">{{course.scoreInPercent}}</td>
+			<td style="text-align: center;"><a
+				ng-if="(course.result == 'NOT STARTED' || course.result == 'FAILED' || course.result == 'IN PROGRESS') && (course.attemptCount <3)"
+				href="" ng-click="questions(course,username)">Start</a></td>
+
+		</tr>
+	</table>
 </div>
