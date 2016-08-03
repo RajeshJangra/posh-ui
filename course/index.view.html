@@ -1,5 +1,4 @@
 <div class="col-lg-12 mainArea">
- <a style="float:right;" href="#/login">Logout</a>
     <h3>Available Courses</h3>
 	<br/>
 
@@ -15,10 +14,13 @@
   </thead>
   <tr ng-repeat="course in courses">
   <td>{{course.name}}</td>
-  <td style="text-align:center;">{{course.result}}</td>
+  <td style="text-align:center;">
+  <span ng-if="(course.result == 'IN PROGRESS')">ABORTED</span>
+  <span ng-if="(course.result != 'IN PROGRESS')">{{course.result}}</span>
+  </td>
   <td style="text-align:center;">{{course.attemptCount}}</td>
-  <td style="text-align:center;">{{course.score}}</td>
-  <td style="text-align:center;"><a ng-if="(course.result == 'NOT STARTED' || course.result == 'FAILED') && (course.attemptCount <3)" href="" ng-click="questions(course,username)">Start</a></td>
+  <td style="text-align:center;">{{course.scoreInPercent}}</td>
+  <td style="text-align:center;"><a ng-if="(course.result == 'NOT STARTED' || course.result == 'FAILED' || course.result == 'IN PROGRESS') && (course.attemptCount <3)" href="" ng-click="questions(course,username)">Start</a></td>
   
   </tr>
   </table>

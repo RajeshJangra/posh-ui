@@ -10,6 +10,7 @@
         initController();
 
         function initController() {
+			$location.path('/questions');
 			var data = $localStorage.selectedCource;
 			$scope.course = data.course;
 			$scope.videoLink = "./static/videos/"+data.course.name+".mp4";
@@ -18,7 +19,7 @@
             $scope.allQuestions = result.questions; 
 			$scope.attemptId = result.attemptId;			
             });
-			$location.path('/questions');
+			
         }
 		
 		
@@ -79,7 +80,7 @@
 			$scope.finalSubmit = function() {
 				
 				QuestionsService.submitQuiz($scope.attemptId, $scope.selectedQuestions, function (response) {	
-					$scope.score = response.score;
+					$scope.score = response.scoreInPercent;
 					$scope.result = response.result;
 				});
 				$scope.showScore = true;

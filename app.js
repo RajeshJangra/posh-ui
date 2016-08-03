@@ -36,6 +36,12 @@
     function run($rootScope, $http, $location, $localStorage) {
         // keep user logged in after page refresh
         if ($localStorage.currentUser) {
+			$rootScope.showLogin = true;
+			if($localStorage.currentUser.role == 'admin'){
+				$rootScope.showAdmin = true;
+			} else{
+				$rootScope.showAdmin = false;
+			}
             $http.defaults.headers.common['x-auth-token'] = $localStorage.currentUser.token;
         }
 
