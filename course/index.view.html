@@ -20,7 +20,7 @@
 			<td style="text-align: center;">{{course.attemptCount}}</td>
 			<td style="text-align: center;">{{course.scoreInPercent}}</td>
 			<td style="text-align: center;"><a
-				ng-if="(course.result == 'NOT STARTED' || course.result == 'FAILED' || course.result == 'IN PROGRESS') && (course.attemptCount <3)"
+				ng-if="(course.result == 'NOT STARTED' || course.result == 'FAILED' || course.result == 'IN PROGRESS') && (course.attemptCount <course.maxAttempt)"
 				href="" ng-click="questions(course,username)">Start</a></td>
 
 		</tr>
