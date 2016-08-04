@@ -17,7 +17,7 @@
 			 
 			<a style="float:right;" href="#/login"  ng-show="showLogin">Logout</a> 
 			
-			<a style="float:right;" href="#/login" ng-show="showAdmin">Admin |</a> 
+			<a style="float:right;" href="#/admin" ng-show="showAdmin">Admin |</a> 
                 <ui-view></ui-view>
             </div>
         </div>
@@ -35,11 +35,12 @@
 	<script src="app-services/cources.service.js"></script>
 	<script src="app-services/question.service.js"></script>
 	<script src="app-services/scorecard.service.js"></script>
+	<script src="app-services/admin.service.js"></script>
 	<script src="login/index.controller.js"></script>
     <script src="course/index.controller.js"></script>
 	<script src="course/question.controller.js"></script>
 	<script src="course/scorecard.controller.js"></script>
-
+	<script src="admin/admin.controller.js"></script>
     <!-- scripts for fake backend -->
     <!-- <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-mocks.js"></script>
     <script src="app-helpers/fake-backend.js"></script> -->

@@ -34,6 +34,12 @@
                 templateUrl: 'login/index.view.html',
                 controller: 'Login.IndexController',
                 controllerAs: 'vm'
+            })
+			.state('admin', {
+                url: '/admin',
+                templateUrl: 'admin/admin.view.html',
+                controller: 'Admin.Controller',
+                controllerAs: 'admin'
             });
 			// default route
         $urlRouterProvider.otherwise("/");

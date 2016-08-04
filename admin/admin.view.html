@@ -1,0 +1,15 @@
+<div class="mainArea">
+	<h2>Admin Panel</h2>
+
+	<table class="coursesTbl">
+	<thead>
+	<tr>
+	<th colspan="2">Download report</th>
+	</tr>
+	<thead>
+	<tr ng-repeat="course in allCourses">
+	<td>{{course.name}}</td>
+	<td><a href="http://localhost:8080/api/report/course/{{course.id}}" class="btn" style="padding: 2px 5px;">Download</td>
+	</tr>
+	</table>
+</div>
