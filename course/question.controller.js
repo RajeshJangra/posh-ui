@@ -23,6 +23,7 @@
 			QuestionsService.getQuestions(data, function (result) {
 				$scope.allQuestions = result.data.questions; 
 				$scope.attemptId = result.data.attemptId;	
+				$scope.timerInSecs = result.data.timerInSecs;	
 
 				$scope.id = 0;
 				$scope.quizOver = false;
@@ -83,7 +84,7 @@
 		$scope.timer = function() {
 			// stops any running interval to avoid two intervals running at the same time
 			$scope.stop(mytimeout);
-			$scope.counter = 15;
+			$scope.counter = $scope.timerInSecs;
 			mytimeout = $interval($scope.onTimeout,1000);
 		}
 
