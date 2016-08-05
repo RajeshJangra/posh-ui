@@ -2,10 +2,12 @@
 	'use strict';
 
 	angular
-	.module('app')
+	.module('induction.question',[
+	    'induction.configuration'
+	    ])
 	.factory('QuestionsService', Service);
 
-	function Service($location, $http, $localStorage) {
+	function Service($location, $http, $localStorage, Configuration) {
 		var service = {};
 
 		service.getQuestions = getQuestions;
@@ -14,9 +16,10 @@
 		return service;
 
 		function getQuestions(data, callback) {
+			var baseUrl = Configuration.getBaseUrl();
 			$http({
 				method: 'GET',
-				url: 'http://localhost:8080/api/course/'+data.course.id+'/start/'+data.empId
+				url: baseUrl+'api/course/'+data.course.id+'/start/'+data.empId
 			}).then(function(response) {
 				callback(response);
 		    }, function(response) {
@@ -28,9 +31,10 @@
 		}
 
 		function submitQuiz(attemptId, questions) {
+			var baseUrl = Configuration.getBaseUrl();
 			$http({
 				method: 'POST',
-				url: 'http://localhost:8080/api/course/submit/'+attemptId,
+				url: baseUrl+'api/course/submit/'+attemptId,
 				data: questions
 			}).then(function(response) {
 				$localStorage.attemptId = attemptId;

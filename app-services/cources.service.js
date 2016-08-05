@@ -2,10 +2,12 @@
     'use strict';
 
     angular
-        .module('app')
+        .module('induction.course',[
+        'induction.configuration'
+        ])
         .factory('CourcesService', Service);
 
-    function Service($location, $http, $localStorage) {
+    function Service($location, $http, $localStorage, Configuration) {
         var service = {};
 
         service.getCourses = getCourses;
@@ -13,7 +15,8 @@
         return service;
 
         function getCourses(username, callback) {
-            $http.get('http://localhost:8080/api/employee/'+username+'/courses')
+        	var baseUrl = Configuration.getBaseUrl();
+            $http.get(baseUrl+'api/employee/'+username+'/courses')
                   .success(function (response) {
                         callback(response);
                 })

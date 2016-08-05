@@ -2,10 +2,12 @@
     'use strict';
 
     angular
-        .module('app')
+        .module('induction.authentication',[
+           'induction.configuration'
+           ])
         .factory('AuthenticationService', Service);
 
-    function Service($rootScope, $http, $localStorage) {
+    function Service($rootScope, $http, $localStorage, Configuration) {
         var service = {};
 
         service.Login = Login;
@@ -14,7 +16,8 @@
         return service;
 
         function Login(username, password, callback) {
-            $http.post('http://localhost:8080/api/auth', { username: username, password: password })
+        	var baseUrl = Configuration.getBaseUrl();
+            $http.post(baseUrl+'api/auth', { username: username, password: password })
                 .success(function (response) {
 					service.Logout;
                     // login successful if there's a token in the response

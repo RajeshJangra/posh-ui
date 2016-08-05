@@ -2,10 +2,12 @@
 	'use strict';
 
 	angular
-	.module('app')
+	.module('induction.scorecard',[
+	    'induction.configuration'
+	    ])
 	.factory('ScorecardService', Service);
 
-	function Service($location, $http) {
+	function Service($location, $http, Configuration) {
 		var service = {};
 
 		service.getScorecard = getScorecard;
@@ -13,9 +15,10 @@
 		return service;
 
 		function getScorecard(attemptId, callback) {
+			var baseUrl = Configuration.getBaseUrl();
 			$http({
 				method: 'GET',
-				url: 'http://localhost:8080/api/course/scorecard/'+attemptId
+				url: baseUrl+'api/course/scorecard/'+attemptId
 			}).then(function(response) {
 				callback(response);
 		    }, function(response) {

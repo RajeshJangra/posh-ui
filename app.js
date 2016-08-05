@@ -1,8 +1,8 @@
-﻿(function () {
+﻿﻿(function () {
     'use strict';
 
     angular
-        .module('app', ['ui.router', 'ngMessages', 'ngStorage'])
+        .module('app', ['ui.router', 'ngMessages', 'ngStorage', 'induction.authentication', 'induction.course', 'induction.question', 'induction.scorecard'])
         .config(config)
         .run(run);
 
