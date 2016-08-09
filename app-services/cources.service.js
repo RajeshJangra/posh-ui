@@ -16,7 +16,7 @@
 
         function getCourses(username, callback) {
         	var baseUrl = Configuration.getBaseUrl();
-            $http.get(baseUrl+'api/employee/'+username+'/courses')
+            $http.get(baseUrl+'employee/'+username+'/courses')
                   .success(function (response) {
                         callback(response);
                 })

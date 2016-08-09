@@ -19,7 +19,7 @@
 			var baseUrl = Configuration.getBaseUrl();
 			$http({
 				method: 'GET',
-				url: baseUrl+'api/course/'+data.course.id+'/start/'+data.empId
+				url: baseUrl+'course/'+data.course.id+'/start/'+data.empId
 			}).then(function(response) {
 				callback(response);
 		    }, function(response) {
@@ -34,7 +34,7 @@
 			var baseUrl = Configuration.getBaseUrl();
 			$http({
 				method: 'POST',
-				url: baseUrl+'api/course/submit/'+attemptId,
+				url: baseUrl+'course/submit/'+attemptId,
 				data: questions
 			}).then(function(response) {
 				$localStorage.attemptId = attemptId;

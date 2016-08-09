@@ -18,7 +18,7 @@
 			var baseUrl = Configuration.getBaseUrl();
 			$http({
 				method: 'GET',
-				url: baseUrl+'api/course/scorecard/'+attemptId
+				url: baseUrl+'course/scorecard/'+attemptId
 			}).then(function(response) {
 				callback(response);
 		    }, function(response) {

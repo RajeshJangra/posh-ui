@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('app', ['ui.router', 'ngMessages', 'ngStorage', 'induction.authentication', 'induction.course', 'induction.question', 'induction.scorecard'])
+        .module('app', ['ui.router', 'ngMessages', 'ngStorage', 'induction.authentication', 'induction.course', 'induction.question', 'induction.scorecard', 'induction.admin'])
         .config(config)
         .run(run);
 

@@ -1,4 +1,4 @@
-﻿﻿(function () {
+﻿﻿﻿(function () {
     'use strict';
 
     angular
@@ -17,7 +17,7 @@
 
         function Login(username, password, callback) {
         	var baseUrl = Configuration.getBaseUrl();
-            $http.post(baseUrl+'api/auth', { username: username, password: password })
+            $http.post(baseUrl+'auth', { username: username, password: password })
                 .success(function (response) {
 					service.Logout;
                     // login successful if there's a token in the response
