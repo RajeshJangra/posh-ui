@@ -3,10 +3,28 @@
 }
 
 body{
-	background-image:url('images/bkgrnd.jpg');
+/*	background-image:url('images/bkgrnd.jpg');
+*/
+background-color: #fafafa;
 }
 
- 
+.userName,.passWord{
+    height: 46px;
+    padding: 10px 16px;
+    font-size: 18px;
+    line-height: 1.3333333;
+    border-radius: 6px;
+    background-color: #fff !important;
+}
+
+.login{
+    width: 100% !important;
+    border-radius: 20px !important;
+    padding: 10px 20px !important;
+    font-size: 20px !important;
+    background-color: #00a65a !important;
+    border-color: #008d4c !important; 
+} 
 
 .content {
     color: inherit;
@@ -17,12 +35,15 @@ body{
 }
 
 .mainArea{
-	min-height:150px;
-	max-width:750px;
-	background-color:white;
-	padding:50px;
-	border-radius:10px;
-	
+    border: 1px #ddd solid;
+    margin-bottom: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 1px 2px 3px 2px #ddd;
+    padding: 20px;
+    clear: both;	
+    width: 360px;
+    margin-left: 30%;
 }
 
 .btn{
@@ -69,14 +90,16 @@ body{
 
 .question{
 	color: #2980b9;
+    font-size: 24px;
+    font-family: helvetica;
 }
 
 .score{
-	background-color:#94d9ff;
 	color:black;
 	padding:15px;
 	border-radius:10px;
 	margin-bottom:20px
+    text-align: center;
 }
 
 .coursesTbl tr td{
@@ -85,4 +108,13 @@ body{
 
 .coursesTbl thead  tr th{
 	padding:10px;
+}
+.scoreLine{
+    font-weight: bolder;
+}
+.result{
+     font-weight: lighter;
+}
+.scoreFinal {
+    font-weight: bold;
 }

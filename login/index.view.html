@@ -1,26 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Xebia India Induction program </title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!-- Bootstrap 3.3.5 -->
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="assets/fontawesome/font-awesome.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="assets/css/custom.css">
+    
+    <link rel="stylesheet" href="app-content/app.css">
+    <!-- <link rel="stylesheet" href="assets/css/skin/skin.css"> -->
+</head>
+
+<body>
+
 <div class="col-md-6 col-md-offset-3 mainArea">
     
-    <h3>Xebia Induction Program</h3>
-    </br>
+   <p  class = "text-center">
+     <img src="assets/images/logo-purple.svg" alt="Xebia"  width="100px" height="50px">
+   </p>
+   </br>
         
     <form name="form" ng-submit="form.$valid && vm.login()" novalidate>
         <div class="form-group" ng-class="{ 'has-error': form.$submitted && form.username.$invalid }">
-            <label for="username">Username</label>
-            <input type="text" name="username" class="form-control" ng-model="vm.username" required />
+            <label for="username">User ID</label>
+            <input type="text" name="username" class="form-control userName" ng-model="vm.username" required />
             <div ng-messages="form.$submitted && form.username.$error" class="help-block">
                 <div ng-message="required">Username is required</div>
             </div>
         </div>
         <div class="form-group" ng-class="{ 'has-error': form.$submitted && form.password.$invalid }">
             <label for="password">Password</label>
-            <input type="password" name="password" class="form-control" ng-model="vm.password" required />
+            <input type="password" name="password" class="form-control passWord" ng-model="vm.password" required />
             <div ng-messages="form.$submitted && form.password.$error" class="help-block">
                 <div ng-message="required">Password is required</div>
             </div>
         </div>
         <div class="form-group">
-            <button  class="btn btn-primary">Login</button>
+            <button  class="btn btn-primary login">Login
+                <i class="fa fa-sign-out" aria-hidden="true"></i>
+            </button>
         </div>
         <div ng-if="vm.error" class="alert alert-danger">{{vm.error}}</div>
     </form>
 </div>
+</body>
+
+</html>
