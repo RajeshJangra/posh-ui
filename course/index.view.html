@@ -73,7 +73,7 @@
             </tr>
         </thead>
         <tr ng-repeat="course in courses">
-            <td>{{course.name}}</td>
+            <td>{{course.name}} ({{course.description}})</td>
             <td style="text-align: center;"><span
                 ng-if="(course.result == 'IN PROGRESS')">ABORTED</span> <span
                 ng-if="(course.result != 'IN PROGRESS')">{{course.result}}</span></td>
@@ -87,10 +87,10 @@
     </table>
             </div>
         </div>
-    <div ng-hide = "showAdmin">
+    <div>
         <span class = "note">Note : </span>
         <span class = "message">
-            You need to score 90% in maximum of 3 attempts to clear the test. Once failed after 3 times the account will be unlocked only after 1 months
+            You need to score 90% in maximum of 3 attempts to pass the test. Please contact <a href= "mailto:hrindia@xebia.com">Xebia HR Team</a> for any concern.
         </span>
         </div>
     </div>
