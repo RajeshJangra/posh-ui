@@ -59,39 +59,47 @@
         </div>
     </nav>
     <div class="fullWidthClass">
+    	<div >
+    		<h3>Welcome! </h3>
+    		<h4 class = "infoText">Here are a few courses that we request you to go through and understand fully. The purpose of these courses is to increase awareness towards a few key topics in the organization that are important to create and maintain a healthy workplace. 
+    		</h4>
+    	</div>
+    
         <div class="row">
             <div class="col-md-12 clearfix ">
                 <h3>Available Courses</h3>
                  <table class="table table-striped table-bordered table-hover">
-        <thead>
-            <tr class = "info">
-                <th style="width: 250px">Name</th>
-                <th style="width: 200px; text-align: center;">Status</th>
-                <th style="width: 100px; text-align: center;">Total Attempts</th>
-                <th style="width: 100px; text-align: center;">Score</th>
-                <th style="width: 100px; text-align: center;">Link</th>
-            </tr>
-        </thead>
-        <tr ng-repeat="course in courses">
-            <td>{{course.name}} ({{course.description}})</td>
-            <td style="text-align: center;"><span
-                ng-if="(course.result == 'IN PROGRESS')">ABORTED</span> <span
-                ng-if="(course.result != 'IN PROGRESS')">{{course.result}}</span></td>
-            <td style="text-align: center;">{{course.attemptCount}}</td>
-            <td style="text-align: center;">{{course.scoreInPercent}}%</td>
-            <td style="text-align: center;"><a
-                ng-if="(course.result == 'NOT STARTED' || course.result == 'FAILED' || course.result == 'IN PROGRESS') && (course.attemptCount <course.maxAttempt)"
-                href="" ng-click="questions(course,username)">Start</a></td>
-
-        </tr>
-    </table>
+			        <thead>
+			            <tr class = "info">
+			                <th style="width: 250px">Name</th>
+			                <th style="width: 200px; text-align: center;">Status</th>
+			                <th style="width: 100px; text-align: center;">Total Attempts</th>
+			                <th style="width: 100px; text-align: center;">Score</th>
+			                <th style="width: 100px; text-align: center;">Link</th>
+			            </tr>
+			        </thead>
+			        <tr ng-repeat="course in courses">
+			            <td>{{course.name}} ({{course.description}})</td>
+			            <td style="text-align: center;"><span
+			                ng-if="(course.result == 'IN PROGRESS')">ABORTED</span> <span
+			                ng-if="(course.result != 'IN PROGRESS')">{{course.result}}</span></td>
+			            <td style="text-align: center;">{{course.attemptCount}}</td>
+			            <td style="text-align: center;">{{course.scoreInPercent}}%</td>
+			            <td style="text-align: center;"><a
+			                ng-if="(course.result == 'NOT STARTED' || course.result == 'FAILED' || course.result == 'IN PROGRESS') && (course.attemptCount <course.maxAttempt)"
+			                href="" ng-click="questions(course,username)">Start</a></td>
+			
+			        </tr>
+			    </table>
             </div>
         </div>
-    <div>
-        <span class = "note">Note : </span>
-        <span class = "message">
-            You need to score 90% in maximum of 3 attempts to pass the test. Please contact <a href= "mailto:hrindia@xebia.com">Xebia HR Team</a> for any concern.
-        </span>
+		
+		</br></br>
+	    <div>
+	        <span class = "note">Note: </span>
+	        <span class = "message">
+	            You need to score 90% in maximum of 3 attempts to pass the test. Please contact <a href= "mailto:hrindia@xebia.com">Xebia HR Team</a> for any concern.
+	        </span>
         </div>
     </div>
     <!-- ./wrapper -->

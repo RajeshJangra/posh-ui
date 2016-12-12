@@ -219,3 +219,10 @@ h1 {
     width: 360px;
     margin-left: 30%;
 }
+.infoText{
+	color: #333;
+    font-family: serif;
+}
+.colorClass{
+   color: #333;
+}
