@@ -13,99 +13,44 @@
     <link rel="stylesheet" href="assets/fontawesome/font-awesome.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="assets/css/custom.css">
+    
+    <link rel="stylesheet" href="app-content/app.css">
     <!-- <link rel="stylesheet" href="assets/css/skin/skin.css"> -->
 </head>
 
 <body>
-    <!-- Main Header -->
-    <nav class="navbar navbar-default navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a href="#" class="logo">
-                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 286 625 220" enable-background="new 0 286 625 220" xml:space="preserve">
-                        <g>
-                            <g>
-                                <path d="M301.6,387.6h-57.1c3.5-12.9,15.2-21.4,27.6-21.4C287.5,366.2,297.7,373.8,301.6,387.6 M244.2,407.2H328
-      c0-1.8,0-3.5,0-5.3c0-13.8-3.2-24.9-9.7-34.3c-11.1-14.7-27.6-23.7-45.4-23.7c-14.3,0-28.1,6.2-38.7,17.3
-      c-9.7,10.3-14.7,23.2-14.7,37.8c0,13.8,5.8,28.1,15.6,38.4c10.8,10.8,23.7,16.1,39.3,16.1c23.2,0,41.6-12.9,50.4-35.7h-26.3
-      c-5,8.5-14.3,12.9-24.9,12.9C256.5,431.3,245.4,421.9,244.2,407.2"></path>
-                                <path d="M365.8,400c0-17.9,12.9-31.3,29.9-31.3c17,0,30.4,14.3,30.4,30.8c0,17.3-12.9,30.8-31.7,30.8
-      C379.3,430.4,365.8,417,365.8,400 M364.9,355.4v-41.9h-24v138.3h24v-8.5c9.7,7.6,20.2,11.1,32.5,11.1c13.4,0,24.9-4.4,34.3-12
-      c12.6-10.8,19.6-26.3,19.6-42.8c0-15.2-6.2-30.4-17.9-40.7c-9.7-9.4-22.3-13.8-36.1-13.8C384.6,344.8,374.3,347.8,364.9,355.4"></path>
-                                <path d="M468,347.5h23.2v104.3H468V347.5z M468,313.5h23.2v23.2H468V313.5z"></path>
-                                <path d="M531.9,398.2c0-17,13.4-29.9,29.9-29.9c15.2,0,29.4,13.4,29.4,31.3c0,16.1-13.8,29.9-29,29.9
-      C545.7,429.5,531.9,416.6,531.9,398.2 M593.9,451.8h23.2V347.5h-23.2V360c-7.1-10.3-17.9-15.2-33.1-15.2c-15.6,0-28.1,5-38.7,16.1
-      c-9.7,10.3-14.7,23.7-14.7,38.4c0,31.3,23.2,54.8,53.9,54.8c16.1,0,26.7-4.4,32.5-15.2V451.8z"></path>
-                            </g>
-                            <polygon points="6,497.2 69.6,497.2 138.4,428.6 207,497.2 271.4,497.2 170.6,396.4 272.3,294.8 207.9,294.8
-    138.4,364.4 69.3,294.8 5.1,294.8 106.2,396.4    "></polygon>
-                        </g>
-                    </svg>
-                </a>
-            </div>
-            <div id="navbar" class="navbar-collapse collapse" aria-expanded="false">
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a  ng-show="showLogin" href="#/login" ><i class="fa fa-sign-in" aria-hidden="true"></i> Logout</a></li>
-                    <li><a  href="#/admin" ng-show="showAdmin"><i aria-hidden="true"></i> Admin</a></li>
-                </ul>
-            </div>
-            <!--/.nav-collapse -->
-        </div>
-    </nav>
-    <div class="fullWidthClass">
-    	<div >
-    		<h3 class = "colorClass">Welcome! </h3>
-    		<h4 class = "infoText">Here are a few courses that we request you to go through and understand fully. The purpose of these courses is to increase awareness towards a few key topics in the organization that are important to create and maintain a healthy workplace. 
-    		</h4>
-    	</div>
+
+<div class="col-md-6 col-md-offset-3 mainArea">
     
-        <div class="row">
-            <div class="col-md-12 clearfix ">
-                <h3 class = "colorClass">Available Courses</h3>
-                 <table class="table table-striped table-bordered table-hover">
-			        <thead>
-			            <tr class = "info">
-			                <th style="width: 250px">Name</th>
-			                <th style="width: 200px; text-align: center;">Status</th>
-			                <th style="width: 100px; text-align: center;">Total Attempts</th>
-			                <th style="width: 100px; text-align: center;">Score</th>
-			                <th style="width: 100px; text-align: center;">Link</th>
-			            </tr>
-			        </thead>
-			        <tr ng-repeat="course in courses">
-			            <td>{{course.name}} ({{course.description}})</td>
-			            <td style="text-align: center;"><span
-			                ng-if="(course.result == 'IN PROGRESS')">ABORTED</span> <span
-			                ng-if="(course.result != 'IN PROGRESS')">{{course.result}}</span></td>
-			            <td style="text-align: center;">{{course.attemptCount}}</td>
-			            <td style="text-align: center;">{{course.scoreInPercent}}%</td>
-			            <td style="text-align: center;"><a
-			                ng-if="(course.result == 'NOT STARTED' || course.result == 'FAILED' || course.result == 'IN PROGRESS') && (course.attemptCount <course.maxAttempt)"
-			                href="" ng-click="questions(course,username)">Start</a></td>
-			
-			        </tr>
-			    </table>
+   <p  class = "text-center">
+     <img src="assets/images/logo-purple.svg" alt="Xebia"  width="100px" height="50px">
+   </p>
+   </br>
+        
+    <form name="form" ng-submit="form.$valid && vm.login()" novalidate>
+        <div class="form-group" ng-class="{ 'has-error': form.$submitted && form.username.$invalid }">
+            <label for="username">Employee ID</label>
+            <input type="text" name="username" class="form-control userName" ng-model="vm.username" required />
+            <div ng-messages="form.$submitted && form.username.$error" class="help-block">
+                <div ng-message="required">Employee ID is required same as Xebia Employee Id.</div>
             </div>
         </div>
-		
-		</br></br>
-	    <div>
-	        <span class = "note">Note: </span>
-	        <span class = "message">
-	            You need to score 90% in maximum of 3 attempts to pass the test. Please contact <a href= "mailto:hrindia@xebia.com">Xebia HR Team</a> for any concern.
-	        </span>
+        <div class="form-group" ng-class="{ 'has-error': form.$submitted && form.password.$invalid }">
+            <label for="password">Password</label>
+            <input type="password" name="password" class="form-control passWord" ng-model="vm.password" required />
+            <div ng-messages="form.$submitted && form.password.$error" class="help-block">
+                <div ng-message="required">Password is required</div>
+            </div>
         </div>
-    </div>
-    <!-- ./wrapper -->
-    <script src="assets/js/jquery/jquery-2.1.4.min.js"></script>
-    <!-- Bootstrap 3.3.5 -->
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+        <div class="form-group">
+            <button  class="btn btn-primary login">Login
+                <i class="fa fa-sign-out" aria-hidden="true"></i>
+            </button>
+        </div>
+        <div ng-if="vm.error" class="alert alert-danger">{{vm.error}}</div>
+        
+    </form>
+</div>
 </body>
 
 </html>
