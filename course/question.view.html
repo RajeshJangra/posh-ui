@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="assets/fontawesome/font-awesome.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="assets/css/custom.css">
+    <script src="assets/js/jquery/jquery-2.1.4.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <!-- <link rel="stylesheet" href="assets/css/skin/skin.css"> -->
 </head>
 
@@ -80,28 +82,31 @@
      </div>
     </div>
 
-    <div class="intro" ng-show="!inProgress">
-        <h3>Courses: <span class = "courseName">{{course.name}}</span></h3>
+    <div class="intro" ng-show="!inProgress" ng-init = "showPopUp = false">
+        <h3>Courses: <span class = "courseName">{{course.name}} - {{course.description}}</span>
+        <div><h4>  <a class="btn" ng-href="{{pdfLink}}" target="_blank" id = "startQuiz"><i class="fa fa-file-pdf-o" aria-hidden="true" ></i> Click here to read the policy document</a></h4></div>
+        </h3>
         <div class = "videoWrapper">
             <video class = "quizVideo" controls>
                 <source ng-src="{{videoLink}}" type="video/mp4">
                 Your browser does not support HTML5 video.
             </video>
         </div>
+        <div ng-show = "showPopUp" class = "overAllPopUp">
+          I have read and understood Prevention of Sexual Harassment Policy and would like to go ahead with the Quiz
+         <button id="startQuiz" ng-click="start()" class="popUpButton btn"> Yes, start the Quiz </button>
+         <button id="startQuiz" ng-click="showPopUp = false" class="popUpButton btn"> No, not ready </button>
+        </div>
         <br /> <br /> 
-        <div class="pull-right">
-            <a class="btn readPDF" ng-href="{{pdfLink}}" target="_blank"><i class="fa fa-file-pdf-o" aria-hidden="true"></i> Read PDF</a>
-            <button id="startQuiz" ng-click="start()" class="btn"> Start the Quiz </button>
+        <div class="pull-right" ng-click="showPopUp = !showPopUp">
+            <button id="startQuiz" class="btn"> Start the Quiz </button>
         </div>
     </div>
 
 
 
 </div>
-    <!-- ./wrapper -->
-    <script src="assets/js/jquery/jquery-2.1.4.min.js"></script>
-    <!-- Bootstrap 3.3.5 -->
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+
 </body>
 
 </html>
